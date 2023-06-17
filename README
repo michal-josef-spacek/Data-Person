@@ -1,0 +1,103 @@
+NAME
+    Data::Person - Data object for person.
+
+SYNOPSIS
+     use Data::Person;
+
+     my $obj = Data::Person->new(%params);
+     my $email = $obj->email;
+     my $id = $obj->id;
+     my $name = $obj->name;
+
+METHODS
+  "new"
+     my $obj = Data::Person->new(%params);
+
+    Constructor.
+
+    Returns instance of object.
+
+    *       "email"
+
+            Person email. It's optional. Default value is undef.
+
+    *       "id"
+
+            Id of person. It's number. It's optional. Default value is
+            undef.
+
+    *       "name"
+
+            Name of person. Length of name is 255. It's optional.
+
+  "email"
+     my $email = $obj->email;
+
+    Get person email.
+
+    Returns string.
+
+  "id"
+     my $id = $obj->id;
+
+    Get person id.
+
+    Returns number.
+
+  "name"
+     my $name = $obj->name;
+
+    Get person name.
+
+    Returns string.
+
+ERRORS
+     new():
+             Parameter 'id' must a number.
+                     Value: %s
+             Parameter 'name' has length greater than '255'.
+                     Value: %s
+
+EXAMPLE
+     use strict;
+     use warnings;
+
+     use Data::Person;
+     use DateTime;
+     use Unicode::UTF8 qw(decode_utf8 encode_utf8);
+
+     my $obj = Data::Commons::Vote::Person->new(
+             'email' => 'skim@cpan.org',
+             'id' => 1,
+             'name' => decode_utf8('Michal Josef Špaček'),
+     );
+
+     # Print out.
+     print 'Id: '.$obj->id."\n";
+     print 'Name: '.encode_utf8($obj->name)."\n";
+     print 'Email: '.$obj->email."\n";
+
+     # Output:
+     # Id: 1
+     # Name: Michal Josef Špaček
+     # Email: skim@cpan.org
+
+DEPENDENCIES
+    Mo, Mo::utils.
+
+REPOSITORY
+    <https://github.com/commons-vote/Data-Person>
+
+AUTHOR
+    Michal Josef Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+LICENSE AND COPYRIGHT
+    © 2021-2023 Michal Josef Špaček
+
+    BSD 2-Clause License
+
+VERSION
+    0.01
+
