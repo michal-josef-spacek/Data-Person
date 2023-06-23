@@ -157,7 +157,7 @@ Returns string.
  use DateTime;
  use Unicode::UTF8 qw(decode_utf8 encode_utf8);
 
- my $obj = Data::Commons::Vote::Person->new(
+ my $obj = Data::Person->new(
          'email' => 'skim@cpan.org',
          'id' => 1,
          'name' => decode_utf8('Michal Josef Špaček'),
