@@ -4,7 +4,10 @@ use strict;
 use warnings;
 
 use Mo qw(build is);
-use Mo::utils qw(check_length check_number);
+use Mo::utils qw(check_length check_number check_strings);
+use Readonly;
+
+Readonly::Array our @SEX => qw(female male unknown);
 
 our $VERSION = 0.01;
 
@@ -20,6 +23,10 @@ has name => (
 	is => 'ro',
 );
 
+has sex => (
+	is => 'ro',
+);
+
 sub BUILD {
 	my $self = shift;
 
@@ -28,6 +35,9 @@ sub BUILD {
 
 	# Check name.
 	check_length($self, 'name', 255);
+
+	# Check sex.
+	check_strings($self, 'sex', \@SEX);
 
 	return;
 }
@@ -52,6 +62,7 @@ Data::Person - Data object for person.
  my $email = $obj->email;
  my $id = $obj->id;
  my $name = $obj->name;
+ my $sex = $obj->sex;
 
 =head1 METHODS
 
@@ -84,6 +95,12 @@ Name of person.
 Length of name is 255.
 It's optional.
 
+=item * C<sex>
+
+Sex of person.
+Possible values are: female, male and unknown.
+It's optional.
+
 =back
 
 =head2 C<email>
@@ -110,6 +127,14 @@ Get person name.
 
 Returns string.
 
+=head2 C<sex>
+
+ my $sex = $obj->sex;
+
+Get person sex.
+
+Returns string.
+
 =head1 ERRORS
 
  new():
@@ -117,6 +142,9 @@ Returns string.
                  Value: %s
          Parameter 'name' has length greater than '255'.
                  Value: %s
+         Parameter 'sex' must be one of defined strings.
+                 String: %s
+                 Possible strings: %s
 
 =head1 EXAMPLE
 
@@ -133,17 +161,20 @@ Returns string.
          'email' => 'skim@cpan.org',
          'id' => 1,
          'name' => decode_utf8('Michal Josef Špaček'),
+         'sex' => 'male',
  );
 
  # Print out.
  print 'Id: '.$obj->id."\n";
  print 'Name: '.encode_utf8($obj->name)."\n";
  print 'Email: '.$obj->email."\n";
+ print 'Sex: '.$obj->sex."\n";
 
  # Output:
  # Id: 1
  # Name: Michal Josef Špaček
  # Email: skim@cpan.org
+ # Sex: male
 
 =head1 DEPENDENCIES
 

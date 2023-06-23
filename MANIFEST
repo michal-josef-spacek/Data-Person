@@ -23,5 +23,6 @@ t/Data-Person/03-new.t
 t/Data-Person/04-email.t
 t/Data-Person/05-id.t
 t/Data-Person/06-name.t
+t/Data-Person/07-sex.t
 xt/Data-Person/01-pod_coverage.t
 xt/Data-Person/02-pod.t

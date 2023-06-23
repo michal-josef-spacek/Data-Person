@@ -17,6 +17,7 @@ $obj = Data::Person->new(
 	'email' => 'skim@cpan.org',
 	'id' => 1,
 	'name' => decode_utf8('Michal Josef Špaček'),
+	'sex' => 'male',
 );
 isa_ok($obj, 'Data::Person');
 
