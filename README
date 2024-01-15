@@ -102,7 +102,7 @@ EXAMPLE
      # Sex: male
 
 DEPENDENCIES
-    Mo, Mo::utils.
+    Mo, Mo::utils, Mo::utils::Email.
 
 REPOSITORY
     <https://github.com/commons-vote/Data-Person>

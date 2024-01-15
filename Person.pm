@@ -5,6 +5,7 @@ use warnings;
 
 use Mo qw(build is);
 use Mo::utils qw(check_length check_number check_strings);
+use Mo::utils::Email qw(check_email);
 use Readonly;
 
 Readonly::Array our @SEX => qw(female male unknown);
@@ -29,6 +30,9 @@ has sex => (
 
 sub BUILD {
 	my $self = shift;
+
+	# Check email.
+	check_email($self, 'email');
 
 	# Check id.
 	check_number($self, 'id');
@@ -179,7 +183,8 @@ Returns string.
 =head1 DEPENDENCIES
 
 L<Mo>,
-L<Mo::utils>.
+L<Mo::utils>,
+L<Mo::utils::Email>.
 
 =head1 REPOSITORY
 
