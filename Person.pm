@@ -10,7 +10,7 @@ use Readonly;
 
 Readonly::Array our @SEX => qw(female male unknown);
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 has email => (
 	is => 'ro',
@@ -204,6 +204,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.01
+0.02
 
 =cut
