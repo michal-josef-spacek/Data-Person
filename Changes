@@ -1,3 +1,5 @@
+0.03
+
 0.02 2024-05-25T12:02:26+02:00
  - Rewrite check for id to Mo::utils::check_number_id().
 
