@@ -24,8 +24,8 @@ METHODS
 
     *       "id"
 
-            Id of person. It's number. It's optional. Default value is
-            undef.
+            Id of person. It's natural number. It's optional. Default value
+            is undef.
 
     *       "name"
 
@@ -66,8 +66,9 @@ METHODS
 
 ERRORS
      new():
-             Parameter 'id' must a number.
-                     Value: %s
+             From Mo::utils::check_number_id():
+                     Parameter 'id' must a natural number.
+                             Value: %s
              Parameter 'name' has length greater than '255'.
                      Value: %s
              Parameter 'sex' must be one of defined strings.

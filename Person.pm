@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Mo qw(build is);
-use Mo::utils qw(check_length check_number check_strings);
+use Mo::utils 0.28 qw(check_length check_number_id check_strings);
 use Mo::utils::Email qw(check_email);
 use Readonly;
 
@@ -35,7 +35,7 @@ sub BUILD {
 	check_email($self, 'email');
 
 	# Check id.
-	check_number($self, 'id');
+	check_number_id($self, 'id');
 
 	# Check name.
 	check_length($self, 'name', 255);
@@ -89,7 +89,7 @@ Default value is undef.
 =item * C<id>
 
 Id of person.
-It's number.
+It's natural number.
 It's optional.
 Default value is undef.
 
@@ -142,8 +142,9 @@ Returns string.
 =head1 ERRORS
 
  new():
-         Parameter 'id' must a number.
-                 Value: %s
+         From Mo::utils::check_number_id():
+                 Parameter 'id' must a natural number.
+                         Value: %s
          Parameter 'name' has length greater than '255'.
                  Value: %s
          Parameter 'sex' must be one of defined strings.

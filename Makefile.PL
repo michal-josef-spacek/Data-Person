@@ -19,7 +19,7 @@ perl_version 5.008;
 readme_from 'Person.pm';
 recursive_author_tests('xt');
 requires 'Mo' => 0;
-requires 'Mo::utils' => 0.09;
+requires 'Mo::utils' => 0.28;
 requires 'Mo::utils::Email' => 0;
 resources 'bugtracker' => 'https://github.com/commons-vote/Data-Person/issues';
 resources 'homepage' => 'https://github.com/commons-vote/Data-Person';
