@@ -107,7 +107,7 @@ DEPENDENCIES
     Mo, Mo::utils, Mo::utils::Email.
 
 REPOSITORY
-    <https://github.com/commons-vote/Data-Person>
+    <https://github.com/michal-josef-spacek/Data-Person>
 
 AUTHOR
     Michal Josef Špaček <mailto:skim@cpan.org>

@@ -31,8 +31,8 @@ requires:
   Mo::utils::Email: 0
   perl: 5.8.0
 resources:
-  bugtracker: https://github.com/commons-vote/Data-Person/issues
-  homepage: https://github.com/commons-vote/Data-Person
+  bugtracker: https://github.com/michal-josef-spacek/Data-Person/issues
+  homepage: https://github.com/michal-josef-spacek/Data-Person
   license: http://opensource.org/licenses/bsd-license.php
-  repository: git://github.com/commons-vote/Data-Person
+  repository: git://github.com/michal-josef-spacek/Data-Person
 version: '0.03'

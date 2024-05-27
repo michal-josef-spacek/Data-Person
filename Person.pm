@@ -189,7 +189,7 @@ L<Mo::utils::Email>.
 
 =head1 REPOSITORY
 
-L<https://github.com/commons-vote/Data-Person>
+L<https://github.com/michal-josef-spacek/Data-Person>
 
 =head1 AUTHOR
 
