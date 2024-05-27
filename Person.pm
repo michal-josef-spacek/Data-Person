@@ -185,7 +185,8 @@ Returns string.
 
 L<Mo>,
 L<Mo::utils>,
-L<Mo::utils::Email>.
+L<Mo::utils::Email>,
+L<Readonly>.
 
 =head1 REPOSITORY
 

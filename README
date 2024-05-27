@@ -104,7 +104,7 @@ EXAMPLE
      # Sex: male
 
 DEPENDENCIES
-    Mo, Mo::utils, Mo::utils::Email.
+    Mo, Mo::utils, Mo::utils::Email, Readonly.
 
 REPOSITORY
     <https://github.com/michal-josef-spacek/Data-Person>
