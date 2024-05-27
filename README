@@ -20,7 +20,8 @@ METHODS
 
     *       "email"
 
-            Person email. It's optional. Default value is undef.
+            Person's email for external identification. It's optional.
+            Default value is undef.
 
     *       "id"
 

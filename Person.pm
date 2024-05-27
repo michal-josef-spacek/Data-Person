@@ -82,7 +82,7 @@ Returns instance of object.
 
 =item * C<email>
 
-Person email.
+Person's email for external identification.
 It's optional.
 Default value is undef.
 

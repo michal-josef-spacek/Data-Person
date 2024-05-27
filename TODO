@@ -2,8 +2,10 @@ TODO
 ====
 1. Add external identifiers.
 Data::ExternalId
-2. Multiple emails or move email to external id?
 3.
 
 Applied
 =======
+2. Multiple emails or move email to external id?
+Email is one of base external identifier.
+NONE [20240527] skim
