@@ -4,7 +4,8 @@ use strict;
 use warnings;
 
 use Mo qw(build default is);
-use Mo::utils 0.28 qw(check_array_object check_length check_number_id check_strings);
+use Mo::utils 0.21 qw(check_array_object check_length check_strings);
+use Mo::utils::Number qw(check_positive_natural);
 use Mo::utils::Email qw(check_email);
 use Readonly;
 
@@ -43,7 +44,7 @@ sub BUILD {
 	check_array_object($self, 'external_ids', 'Data::ExternalId', 'External id');
 
 	# Check id.
-	check_number_id($self, 'id');
+	check_positive_natural($self, 'id');
 
 	# Check name.
 	check_length($self, 'name', 255);
@@ -177,8 +178,8 @@ Returns string.
                  External id isn't 'Data::ExternalId' object.
                          Value: %s
                          Reference: %s
-         From Mo::utils::check_number_id():
-                 Parameter 'id' must a natural number.
+         From Mo::utils::Number::check_positive_natural():
+                 Parameter 'id' must a positive natural number.
                          Value: %s
          Parameter 'name' has length greater than '255'.
                  Value: %s
@@ -232,6 +233,7 @@ Returns string.
 L<Mo>,
 L<Mo::utils>,
 L<Mo::utils::Email>,
+L<Mo::utils::Number>,
 L<Readonly>.
 
 =head1 REPOSITORY

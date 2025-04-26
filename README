@@ -90,8 +90,8 @@ ERRORS
                      External id isn't 'Data::ExternalId' object.
                              Value: %s
                              Reference: %s
-             From Mo::utils::check_number_id():
-                     Parameter 'id' must a natural number.
+             From Mo::utils::Number::check_positive_natural():
+                     Parameter 'id' must a positive natural number.
                              Value: %s
              Parameter 'name' has length greater than '255'.
                      Value: %s
@@ -138,7 +138,7 @@ EXAMPLE
      # External id - Wikidata: Q27954834
 
 DEPENDENCIES
-    Mo, Mo::utils, Mo::utils::Email, Readonly.
+    Mo, Mo::utils, Mo::utils::Email, Mo::utils::Number, Readonly.
 
 REPOSITORY
     <https://github.com/michal-josef-spacek/Data-Person>
