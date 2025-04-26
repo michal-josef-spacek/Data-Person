@@ -1,4 +1,4 @@
-0.05
+0.05 2025-04-26T13:56:39+02:00
  - Add DESCRIPTION section to doc.
  - Rewrite check of 'id' parameter to use of
    Mo::utils::Number::check_positive_natural().
