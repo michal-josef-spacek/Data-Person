@@ -11,6 +11,9 @@ SYNOPSIS
      my $name = $obj->name;
      my $sex = $obj->sex;
 
+DESCRIPTION
+    The immutable data object for representation of person.
+
 METHODS
   "new"
      my $obj = Data::Person->new(%params);

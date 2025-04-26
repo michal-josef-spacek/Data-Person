@@ -77,6 +77,10 @@ Data::Person - Data object for person.
  my $name = $obj->name;
  my $sex = $obj->sex;
 
+=head1 DESCRIPTION
+
+The immutable data object for representation of person.
+
 =head1 METHODS
 
 =head2 C<new>
