@@ -4,7 +4,8 @@ use strict;
 use warnings;
 
 use Mo qw(build default is);
-use Mo::utils 0.21 qw(check_array_object check_length check_strings);
+use Mo::utils 0.21 qw(check_length check_strings);
+use Mo::utils::Array qw(check_array_object);
 use Mo::utils::Number qw(check_positive_natural);
 use Mo::utils::Email qw(check_email);
 use Readonly;
@@ -41,7 +42,7 @@ sub BUILD {
 	check_email($self, 'email');
 
 	# Check external_ids.
-	check_array_object($self, 'external_ids', 'Data::ExternalId', 'External id');
+	check_array_object($self, 'external_ids', 'Data::ExternalId');
 
 	# Check id.
 	check_positive_natural($self, 'id');
@@ -171,16 +172,18 @@ Returns string.
 =head1 ERRORS
 
  new():
-         From Mo::utils::check_array_object():
+         From Mo::utils::Array::check_array_object():
                  Parameter 'external_ids' must be a array.
                          Value: %s
                          Reference: %s
-                 External id isn't 'Data::ExternalId' object.
+                 Parameter 'external_ids' with array must contain 'Data::ExternalId' objects.
                          Value: %s
                          Reference: %s
+
          From Mo::utils::Number::check_positive_natural():
                  Parameter 'id' must a positive natural number.
                          Value: %s
+
          Parameter 'name' has length greater than '255'.
                  Value: %s
          Parameter 'sex' must be one of defined strings.
@@ -232,6 +235,7 @@ Returns string.
 
 L<Mo>,
 L<Mo::utils>,
+L<Mo::utils::Array>,
 L<Mo::utils::Email>,
 L<Mo::utils::Number>,
 L<Readonly>.
